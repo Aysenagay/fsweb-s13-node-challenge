@@ -9,10 +9,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Workintech/fsweb-s13-challenge.git"
+    "url": "git+https://github.com/Workintech/fsweb-s13-challenge"
   },
   "dependencies": {
-    "express": "^4.18.1",
+    "cors": "^2.8.5",
+    "express": "4.18.1",
     "helmet": "5.0.2",
     "knex": "^2.4.1",
     "sqlite3": "5.0.8"
@@ -25,12 +26,5 @@
     "nodemon": "^2.0.22",
     "supertest": "6.2.3"
   },
-  "license": "ISC",
-  "description": "- Fork, klon, ve `npm install`.\r - `npm run resetdb` komutuyla veritabanını yükleyin.\r - `npm test`.",
-  "bugs": {
-    "url": "https://github.com/Workintech/fsweb-s13-challenge/issues"
-  },
-  "homepage": "https://github.com/Workintech/fsweb-s13-challenge#readme",
-  "keywords": [],
-  "author": ""
+  "license": "ISC"
 }

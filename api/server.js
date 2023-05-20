@@ -3,6 +3,8 @@ const server = express();
 const projectsRouter = require("./projects/projects-router");
 const actionsRouter = require("./actions/actions-router");
 
+server.use(express.json());
+
 // Sunucunuzu yapılandırın
 // Eylem routerınızı /api/actions/actions-router.js içinde oluşturun
 // Proje roterlarınızı /api/projects/projects-router.js içinde oluşturun

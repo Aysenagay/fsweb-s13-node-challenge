@@ -1,4 +1,3 @@
-// "project" routerını buraya yazın!
 const router = require("express").Router();
 const projectsModel = require("./projects-model");
 const mw = require("./projects-middleware");
@@ -20,12 +19,7 @@ router.get("/:id", mw.validateProjectId, (req, res, next) => {
 });
 router.post("/", mw.validateProjectPayload, async (req, res, next) => {
   try {
-    let model = {
-      name: req.body.name,
-      description: req.body.description,
-      completed: req.body.completed,
-    };
-    const inserted = await projectsModel.insert(model);
+    const inserted = await projectsModel.insert(req.body);
     res.status(201).json(inserted);
   } catch (error) {
     next(error);
@@ -37,12 +31,7 @@ router.put(
   mw.validateProjectPayload,
   async (req, res, next) => {
     try {
-      let model = {
-        name: req.body.name,
-        description: req.body.description,
-        completed: req.body.completed,
-      };
-      const updated = await projectsModel.update(req.params.id, model);
+      const updated = await projectsModel.update(req.params.id, req.body);
       res.json(updated);
     } catch (error) {
       next(error);
